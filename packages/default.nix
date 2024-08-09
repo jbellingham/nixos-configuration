@@ -18,8 +18,8 @@
     # nixgl.auto.nixGLDefault
     
     glibc
-    adwaita-icon-theme
-    gnome-tweaks
+    # adwaita-icon-theme
+    # gnome-tweaks
     toybox # just for pgrep
     wine
     winetricks

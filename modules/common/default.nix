@@ -26,6 +26,7 @@
 
       # Pin a state version to prevent warnings
       home-manager.users.${config.user} = {
+        shell = pkgs.zsh;
         home = {
           packages = import ../../packages { inherit pkgs; };
           stateVersion = stateVersion;

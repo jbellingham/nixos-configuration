@@ -7,7 +7,8 @@ nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   modules = [
     globals
-    home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
+    ../../modules/common
     ../../modules/nixos
     {}
   ];

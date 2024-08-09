@@ -52,7 +52,7 @@
 
     # apps
     discord
-    dwarf-fortress-packages.dwarf-fortress-full
+    # dwarf-fortress-packages.dwarf-fortress-full
     firefox
     meld
     obsidian

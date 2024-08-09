@@ -37,14 +37,14 @@
           enableZshIntegration = true;
         };
 
-        direnv = import ./modules/direnv;
+        direnv = import ./direnv;
 
         fzf = {
           enable = true;
           enableZshIntegration = true;
         };
 
-        git = import ./modules/git;
+        git = import ./git;
 
         mcfly = {
           enable = true;
@@ -58,8 +58,8 @@
 
         vim.enable = true;
 
-        vscode = import ./modules/vscode { inherit pkgs; };
-        zsh = import ./modules/zsh { inherit pkgs; };
+        vscode = import ./vscode { inherit pkgs; };
+        zsh = import ./zsh { inherit pkgs; };
       };
     };
 }

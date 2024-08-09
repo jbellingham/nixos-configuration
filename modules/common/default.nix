@@ -27,7 +27,7 @@
       home-manager.users.${config.user}.home.stateVersion = stateVersion;
       home-manager.users.root.home.stateVersion = stateVersion;
 
-      packages = import ../packages { inherit pkgs; };
+      packages = import ../../packages { inherit pkgs; };
       programs = {
         # Let Home Manager install and manage itself.
         home-manager.enable = true;

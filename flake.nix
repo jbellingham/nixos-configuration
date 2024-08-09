@@ -20,15 +20,14 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
     let
-
       # Global configuration for my systems
-      globals = rec {
-        user = "jesse";
-        fullName = "Jesse Bellingham";
-        gitName = fullName;
-        gitEmail = "5078290+jbellingham@users.noreply.github.com";
-        # dotfilesRepo = "git@github.com:nmasur/dotfiles";
-      };
+      globals =
+        rec {
+            user = "jesse";
+            fullName = fullName;        
+            # gitName = fullName;
+            # gitEmail = "5078290+jbellingham@users.noreply.github.com";
+          };
 
       # System types to support.
       supportedSystems =

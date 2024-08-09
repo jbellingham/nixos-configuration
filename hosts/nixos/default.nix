@@ -10,6 +10,7 @@ nixpkgs.lib.nixosSystem {
     inputs.home-manager.nixosModules.home-manager
     ../../modules/common
     ../../modules/nixos
+    ./hardware-configuration.nix
     {}
   ];
 }

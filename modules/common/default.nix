@@ -22,44 +22,45 @@
       ];
 
       nixpkgs.config.allowUnfree = true;
-
-      # Pin a state version to prevent warnings
-      home-manager.users.${config.user}.home.stateVersion = stateVersion;
       home-manager.users.root.home.stateVersion = stateVersion;
 
-      packages = import ../../packages { inherit pkgs; };
-      programs = {
-        # Let Home Manager install and manage itself.
-        home-manager.enable = true;
+      # Pin a state version to prevent warnings
+      home-manager.users.${config.user}.home = {
+        stateVersion = stateVersion;
+        packages = import ../../packages { inherit pkgs; };
+        programs = {
+          # Let Home Manager install and manage itself.
+          home-manager.enable = true;
 
-        autojump = {
-          enable = true;
-          enableZshIntegration = true;
+          autojump = {
+            enable = true;
+            enableZshIntegration = true;
+          };
+
+          direnv = import ./direnv;
+
+          fzf = {
+            enable = true;
+            enableZshIntegration = true;
+          };
+
+          git = import ./git;
+
+          mcfly = {
+            enable = true;
+            fzf.enable = true;
+          };
+
+          oh-my-posh = {
+            enable = true;
+            useTheme = "1_shell";
+          };
+
+          vim.enable = true;
+
+          vscode = import ./vscode { inherit pkgs; };
+          zsh = import ./zsh { inherit pkgs; };
         };
-
-        direnv = import ./direnv;
-
-        fzf = {
-          enable = true;
-          enableZshIntegration = true;
-        };
-
-        git = import ./git;
-
-        mcfly = {
-          enable = true;
-          fzf.enable = true;
-        };
-
-        oh-my-posh = {
-          enable = true;
-          useTheme = "1_shell";
-        };
-
-        vim.enable = true;
-
-        vscode = import ./vscode { inherit pkgs; };
-        zsh = import ./zsh { inherit pkgs; };
       };
     };
 }

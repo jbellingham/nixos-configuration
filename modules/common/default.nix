@@ -28,39 +28,39 @@
       home-manager.users.${config.user}.home = {
         stateVersion = stateVersion;
         packages = import ../../packages { inherit pkgs; };
-        programs = {
-          # Let Home Manager install and manage itself.
-          home-manager.enable = true;
+        # programs = {
+        #   # Let Home Manager install and manage itself.
+        #   home-manager.enable = true;
 
-          autojump = {
-            enable = true;
-            enableZshIntegration = true;
-          };
+        #   autojump = {
+        #     enable = true;
+        #     enableZshIntegration = true;
+        #   };
 
-          direnv = import ./direnv;
+        #   direnv = import ./direnv;
 
-          fzf = {
-            enable = true;
-            enableZshIntegration = true;
-          };
+        #   fzf = {
+        #     enable = true;
+        #     enableZshIntegration = true;
+        #   };
 
-          git = import ./git;
+        #   git = import ./git;
 
-          mcfly = {
-            enable = true;
-            fzf.enable = true;
-          };
+        #   mcfly = {
+        #     enable = true;
+        #     fzf.enable = true;
+        #   };
 
-          oh-my-posh = {
-            enable = true;
-            useTheme = "1_shell";
-          };
+        #   oh-my-posh = {
+        #     enable = true;
+        #     useTheme = "1_shell";
+        #   };
 
-          vim.enable = true;
+        #   vim.enable = true;
 
-          vscode = import ./vscode { inherit pkgs; };
-          zsh = import ./zsh { inherit pkgs; };
-        };
+        #   vscode = import ./vscode { inherit pkgs; };
+        #   zsh = import ./zsh { inherit pkgs; };
+        # };
       };
     };
 }

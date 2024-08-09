@@ -8,7 +8,6 @@ nixpkgs.lib.nixosSystem {
   modules = [
     globals
     home-manager.nixosModules.home-manager
-    ../../modules/common
     ../../modules/nixos
     {}
   ];

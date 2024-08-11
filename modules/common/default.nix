@@ -21,8 +21,11 @@
         curl
       ];
 
+      imports = [
+        ./zsh
+      ];
+
       nixpkgs.config.allowUnfree = true;
-      users.users.${config.user}.shell = pkgs.zsh;
       home-manager.users.root.home.stateVersion = stateVersion;
 
       # Pin a state version to prevent warnings
@@ -63,7 +66,6 @@
           vim.enable = true;
 
           vscode = import ./vscode { inherit pkgs; };
-          zsh = import ./zsh { inherit pkgs; };
         };
       };
     };

@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
-    ./zsh
+    ./terminal
   ];
-  
+
   options = {
     user = lib.mkOption {
       type = lib.types.str;
@@ -44,28 +44,12 @@
             enableZshIntegration = true;
           };
 
-          direnv = import ./direnv;
-
           fzf = {
             enable = true;
             enableZshIntegration = true;
           };
 
           git = import ./git;
-
-          mcfly = {
-            enable = true;
-            fzf.enable = true;
-          };
-
-          oh-my-posh = {
-            enable = true;
-            useTheme = "1_shell";
-          };
-
-          vim.enable = true;
-
-          vscode = import ./vscode { inherit pkgs; };
         };
       };
     };

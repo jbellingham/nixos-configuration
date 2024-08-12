@@ -8,6 +8,7 @@
 
     home-manager.users.${config.user} = {
         programs.zsh = {
+            enable = true;
             autosuggestion.enable = true;
             syntaxHighlighting.enable = true;
             autocd = true;

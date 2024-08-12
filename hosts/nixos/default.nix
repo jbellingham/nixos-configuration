@@ -11,6 +11,9 @@ nixpkgs.lib.nixosSystem {
     ../../modules/common
     ../../modules/nixos
     ./hardware-configuration.nix
-    {}
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+    }
   ];
 }

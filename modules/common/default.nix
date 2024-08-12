@@ -39,15 +39,6 @@
           # Let Home Manager install and manage itself.
           # home-manager.enable = true;
 
-          autojump = {
-            enable = true;
-            enableZshIntegration = true;
-          };
-
-          fzf = {
-            enable = true;
-            enableZshIntegration = true;
-          };
 
           git = import ./git;
         };

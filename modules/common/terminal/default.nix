@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   imports = [
     ./direnv.nix
@@ -17,5 +17,16 @@ home-manager.users.${config.user} = {
     };
 
     programs.vim.enable = true;
-  }
+
+
+    programs.autojump = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+  };
 }

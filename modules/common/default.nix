@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+  imports = [
+    ./zsh
+  ];
+  
   options = {
     user = lib.mkOption {
       type = lib.types.str;
@@ -19,10 +23,6 @@
         git
         vim
         curl
-      ];
-
-      imports = [
-        ./zsh
       ];
 
       nixpkgs.config.allowUnfree = true;
